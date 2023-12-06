@@ -22,8 +22,6 @@ export default function ChatComponent({ data, userName }: ChatComponentProps) {
 
   const messageEndRef = useRef<HTMLInputElement>(null);
 
-  console.log(messageOwner);
-
   useEffect(() => {
     var pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY as string, {
       cluster: "eu",
@@ -63,7 +61,7 @@ export default function ChatComponent({ data, userName }: ChatComponentProps) {
                     width={50}
                     height={50}
                   />
-                  <div className="rounded-lg bg-white p-4 shadow-md self-start">
+                  <div className="rounded-lg max-w-2xl bg-white p-4 shadow-md self-start">
                     {messageEl.message}
                   </div>
                 </div>

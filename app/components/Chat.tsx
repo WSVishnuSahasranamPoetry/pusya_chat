@@ -11,11 +11,13 @@ interface ChatComponentProps {
       name: string | null;
     };
     message: string;
+    createdAt: any;
   }[];
   userName: string | null | undefined;
 }
 
 export default function ChatComponent({ data, userName }: ChatComponentProps) {
+  
   const [totalComments, setTotalComments] = useState(data);
 
   const messageOwner = userName;
@@ -61,7 +63,7 @@ export default function ChatComponent({ data, userName }: ChatComponentProps) {
                     width={50}
                     height={50}
                   />
-                  <div className="rounded-lg max-w-2xl bg-white p-4 shadow-md self-start">
+                  <div className="rounded-lg max-w-2xl bg-white px-4 py-2 md:py-3 md:px-8 text-sm md:text-base shadow-md self-start">
                     {messageEl.message}
                   </div>
                 </div>
@@ -74,9 +76,8 @@ export default function ChatComponent({ data, userName }: ChatComponentProps) {
             return (
               <div className="flex justify-end" key={index}>
                 <div className="flex items-end">
-                  <div className="rounded-lg max-w-2xl bg-teal-400/70 p-4 shadow-md self-start">
+                  <div className="rounded-lg max-w-2xl bg-teal-400/70 px-4 py-2 md:py-3 md:px-8 text-sm md:text-base shadow-md self-start">
                     {messageEl.message}
-
                   </div>
                     <Image
                     src={messageEl.User.image as string}
@@ -84,11 +85,8 @@ export default function ChatComponent({ data, userName }: ChatComponentProps) {
                     className="w-12 h-12 ml-4 object-cover rounded-lg"
                     width={50}
                     height={50}
-                    />                            
-                  
-                    
+                    />                              
                 </div>
-                
               </div>
             );
           }

@@ -25,16 +25,16 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextAuthProvider>
-          <nav className="flex lg:px-10 px-3 py-5 justify-between fixed top-0 left-0 w-full bg-white/50">
-            <h1 className="text-2xl lg:text-3xl font-bold">
-              Чат <span className="text-teal-500">Пуси</span> :3
+          <nav className="flex lg:px-10 px-3 py-2 md:py-4 justify-between fixed top-0 left-0 w-full bg-white">
+            <h1 className="text-xl lg:text-3xl font-bold">
+              Чат <span className="text-teal-500">VV17</span>
             </h1>
             {session ? (
               <div className="flex items-center">
                 <Image
                   src={session?.user?.image as string}
                   alt="user image"
-                  className="h-12 w-12 rounded-full mr-3"
+                  className="h-8 w-8 md:w-12  md:h-12 rounded-full mr-3"
                   width={50}
                   height={50}
                 /> 
@@ -45,13 +45,6 @@ export default async function RootLayout({
             )}
           </nav>
           <main className="realative">
-            <Image
-              src="/pusya-logo.png"
-              className="absolute top-[50%] left-0"
-              alt="pusya-logo"
-              width={100}
-              height={100}
-            />
             {children}
           </main>
         </NextAuthProvider>

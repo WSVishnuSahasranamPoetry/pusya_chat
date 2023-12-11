@@ -14,11 +14,10 @@ export default function Form() {
             formRef.current?.reset();
         }} className="p-6 fixed w-full bottom-0 left-0 bg-white">
             <div className="flex">
-                <input 
-                    type="text"
+                <textarea 
                     name="message"
                     placeholder="Введите ваще сообщение..."
-                    className="flex-grow py-2 px-4 outline-none"
+                    className="flex-grow mr-1 py-2 px-4 outline-none"
                 />
                 <SendMessageButton />
             </div>

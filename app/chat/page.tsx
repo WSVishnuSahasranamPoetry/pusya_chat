@@ -15,7 +15,8 @@ async function getData() {
                     name: true,
                     image: true
                 }
-            }
+            },
+            createdAt: true,
 
         },
         orderBy: {
@@ -36,7 +37,7 @@ export default async function ChatHomePage () {
         redirect("/");
     };
 
-    const data = await getData()
+    const data = await getData();
 
     return (
         <div className="h-screen bg-gray-200 flex flex-col">
